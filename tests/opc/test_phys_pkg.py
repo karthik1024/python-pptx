@@ -6,11 +6,6 @@ Test suite for pptx.opc.packaging module
 
 from __future__ import absolute_import
 
-try:
-    from io import BytesIO  # Python 3
-except ImportError:
-    from StringIO import StringIO as BytesIO
-
 import hashlib
 import pytest
 
@@ -22,6 +17,7 @@ from pptx.opc.packuri import PACKAGE_URI, PackURI
 from pptx.opc.phys_pkg import (
     _DirPkgReader, PhysPkgReader, PhysPkgWriter, _ZipPkgReader, _ZipPkgWriter
 )
+from pptx.compat import BytesIO
 
 from ..unitutil import absjoin, class_mock, loose_mock, test_file_dir
 

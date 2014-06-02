@@ -6,6 +6,7 @@ lxml.objectify elements.
 """
 
 from __future__ import absolute_import
+from ..compat import is_string
 
 import itertools
 import re
@@ -85,7 +86,7 @@ def SubElement(parent, nsptag_str, **extra):
     )
 
 
-class XmlString(unicode):
+class XmlString(str):
     """
     Provides string comparison override suitable for serialized XML that is
     useful for tests.
@@ -251,7 +252,7 @@ class ChildTagnames(object):
         """
         children = []
         for item in nested_sequence:
-            if isinstance(item, basestring):
+            if is_string(item):
                 member_name = _Tagname(item)
                 children.append(member_name)
                 continue

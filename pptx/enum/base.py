@@ -8,6 +8,7 @@ from __future__ import absolute_import, print_function
 
 import sys
 import textwrap
+from ..compat import add_metaclass
 
 
 def alias(*aliases):
@@ -147,12 +148,12 @@ class MetaEnumeration(type):
         )
 
 
+@add_metaclass(MetaEnumeration)
 class Enumeration(object):
     """
     Base class for all enumerations, used directly for enumerations requiring
     only basic behavior.
     """
-    __metaclass__ = MetaEnumeration
     __members__ = ()
     __ms_name__ = ''
 

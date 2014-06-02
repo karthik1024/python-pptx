@@ -7,7 +7,7 @@ Base shape-related objects such as BaseShape.
 from __future__ import absolute_import, print_function
 
 from ..text import TextFrame
-from ..util import to_unicode
+from ..compat import to_unicode
 
 
 class BaseShape(object):

@@ -10,7 +10,8 @@ from ..enum.shapes import MSO_SHAPE_TYPE
 from .graphfrm import GraphicFrame
 from ..oxml.ns import qn
 from ..text import TextFrame
-from ..util import lazyproperty, to_unicode
+from ..util import lazyproperty
+from ..compat import to_unicode
 
 
 class Table(GraphicFrame):

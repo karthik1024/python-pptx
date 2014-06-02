@@ -4,14 +4,13 @@
 
 from __future__ import absolute_import
 
-from StringIO import StringIO
-
 from hamcrest import assert_that, equal_to, is_
 
 from pptx.opc.packuri import PackURI
 from pptx.parts.image import Image
 from pptx.package import Package
 from pptx.util import Px
+from pptx.compat import BytesIO
 
 from ..unitutil import absjoin, TestCase, test_file_dir
 
@@ -41,7 +40,7 @@ class TestImage(TestCase):
         # exercise ---------------------
         partname = PackURI('/ppt/media/image1.jpeg')
         with open(test_image_path, 'rb') as f:
-            stream = StringIO(f.read())
+            stream = BytesIO(f.read())
         image = Image.new(partname, stream)
         # verify -----------------------
         assert_that(image.ext, is_(equal_to('jpg')))

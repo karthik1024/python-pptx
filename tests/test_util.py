@@ -9,8 +9,8 @@ import pytest
 
 from pptx.util import (
     BaseLength, Centipoints, Cm, Collection, Emu, Inches, Mm, Pt, Px,
-    to_unicode
 )
+from pptx.compat import to_unicode
 
 from .unitutil import TestCase
 

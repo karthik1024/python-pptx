@@ -11,7 +11,8 @@ from .opc.constants import RELATIONSHIP_TYPE as RT
 from .oxml.shared import Element, get_or_add
 from .oxml.ns import _nsmap, qn
 from .shapes import Subshape
-from .util import Emu, lazyproperty, to_unicode
+from .util import Emu, lazyproperty
+from .compat import to_unicode
 
 
 class TextFrame(Subshape):

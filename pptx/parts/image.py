@@ -13,7 +13,7 @@ try:
 except ImportError:
     import Image as PIL_Image
 
-from StringIO import StringIO
+from ..compat import is_string, BytesIO
 
 from pptx.opc.package import Part
 from pptx.opc.packuri import PackURI
@@ -106,7 +106,7 @@ class Image(Part):
         Load image from *img_file*, which is either a path to an image file
         or a file-like object.
         """
-        if isinstance(img_file, basestring):  # img_file is a path
+        if is_string(img_file):  # img_file is a path
             filepath = img_file
             ext = os.path.splitext(filepath)[1][1:]
             content_type = cls._image_ext_content_type(ext)
@@ -155,7 +155,7 @@ class Image(Part):
         Return *width*, *height* tuple representing native dimensions of
         image in pixels.
         """
-        image_stream = StringIO(self._blob)
+        image_stream = BytesIO(self._blob)
         width_px, height_px = PIL_Image.open(image_stream).size
         image_stream.close()
         return width_px, height_px
