@@ -35,6 +35,9 @@ if sys.version_info >= (3, 0):
 
     from io import BytesIO
 
+    def is_integer(obj):
+        return isinstance(obj, int)
+
     def is_string(obj):
         """
         Return True if *obj* is a string, False otherwise.
@@ -66,6 +69,9 @@ if sys.version_info >= (3, 0):
 else:
 
     from StringIO import StringIO as BytesIO  # noqa
+
+    def is_integer(obj):
+        return isinstance(obj, (int, long))
 
     def is_string(obj):
         """

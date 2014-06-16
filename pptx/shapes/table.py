@@ -11,7 +11,7 @@ from .graphfrm import GraphicFrame
 from ..oxml.ns import qn
 from ..text import TextFrame
 from ..util import lazyproperty
-from ..compat import to_unicode
+from ..compat import to_unicode, is_integer
 
 
 class Table(GraphicFrame):
@@ -258,8 +258,7 @@ class _Cell(Subshape):
         Raise ValueError if *margin_value* is not a positive integer value or
         |None|.
         """
-        if (not isinstance(margin_value, (int, long))
-                and margin_value is not None):
+        if (not is_integer(margin_value) and margin_value is not None):
             tmpl = "margin value must be integer or None, got '%s'"
             raise TypeError(tmpl % margin_value)
 
