@@ -108,8 +108,8 @@ class CT_Table(objectify.ObjectifiedElement):
         tbl = parse_xml_bytes(xml)
 
         # add specified number of rows and columns
-        rowheight = height/rows
-        colwidth = width/cols
+        rowheight = height // rows
+        colwidth = width // cols
 
         for col in range(cols):
             # adjust width of last col to absorb any div error
