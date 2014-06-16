@@ -77,7 +77,7 @@ class TestImage(TestCase):
 
     def test__ext_from_image_stream_raises_on_incompatible_format(self):
         with self.assertRaises(ValueError):
-            with open(test_bmp_path) as stream:
+            with open(test_bmp_path, 'rb') as stream:
                 Image._ext_from_image_stream(stream)
 
     def test__image_ext_content_type_known_type(self):

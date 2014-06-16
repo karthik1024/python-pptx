@@ -30,6 +30,7 @@ from .unitutil import (
     parse_xml_file, property_mock, test_file_dir
 )
 
+from pptx.compat import to_unicode
 
 class DescribeTextFrame(object):
 
@@ -719,7 +720,7 @@ class Describe_Paragraph(object):
         _7bit_string = 'String containing only 7-bit (ASCII) characters'
         _8bit_string = '8-bit string: Hér er texti með íslenskum stöfum.'
         _utf8_literal = u'unicode literal: Hér er texti með íslenskum stöfum.'
-        _utf8_from_8bit = unicode('utf-8 unicode: Hér er texti', 'utf-8')
+        _utf8_from_8bit = to_unicode('utf-8 unicode: Hér er texti')
         # verify -----------------------
         try:
             text = _7bit_string

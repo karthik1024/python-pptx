@@ -11,6 +11,7 @@ from mock import create_autospec, Mock, patch, PropertyMock
 
 from pptx.oxml import oxml_parser
 
+from pptx.compat import to_unicode
 
 _thisdir = os.path.split(__file__)[0]
 test_file_dir = os.path.abspath(os.path.join(_thisdir, 'test_files'))
@@ -39,7 +40,7 @@ def relpath(relpath):
 
 def serialize_xml(elm, pretty_print=False):
     objectify.deannotate(elm, xsi=False)
-    xml = etree.tostring(elm, pretty_print=pretty_print)
+    xml = to_unicode(etree.tostring(elm, pretty_print=pretty_print))
     return xml
 
 

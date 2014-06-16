@@ -107,7 +107,7 @@ class TestCT_CoreProperties(TestCase):
         coreProperties = a_coreProperties().with_date_prop(
             'created', date_str).element
         # verify -----------------------
-        expected_date = datetime(1999, 01, 23, 12, 34, 56)
+        expected_date = datetime(1999, 1, 23, 12, 34, 56)
         assert_that(coreProperties.created, is_(expected_date))
 
     def test_date_getters_have_none_on_not_datetime(self):
