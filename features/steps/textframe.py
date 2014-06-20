@@ -12,7 +12,7 @@ from pptx import Presentation
 from pptx.enum.text import MSO_AUTO_SIZE
 from pptx.util import Inches
 
-from .helpers import test_pptx
+from helpers import test_pptx
 
 
 # given ===================================================

@@ -13,7 +13,7 @@ from hamcrest import assert_that, is_, less_than
 
 from pptx import Presentation
 
-from .helpers import saved_pptx_path, no_core_props_pptx_path
+from helpers import saved_pptx_path, no_core_props_pptx_path
 
 
 # given ===================================================

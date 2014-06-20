@@ -10,7 +10,7 @@ from behave import given, then
 
 from pptx import Presentation
 
-from .helpers import test_pptx
+from helpers import test_pptx
 
 
 # given ===================================================

@@ -15,7 +15,7 @@ from pptx.parts.slidemaster import (
 )
 from pptx.shapes.shape import BaseShape
 
-from .helpers import test_pptx
+from helpers import test_pptx
 
 
 # given ===================================================

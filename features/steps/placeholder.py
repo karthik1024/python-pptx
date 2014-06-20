@@ -11,7 +11,7 @@ from hamcrest import assert_that, equal_to, is_
 
 from pptx import Presentation
 
-from .helpers import saved_pptx_path, test_pptx, test_text
+from helpers import saved_pptx_path, test_pptx, test_text
 
 
 # given ===================================================

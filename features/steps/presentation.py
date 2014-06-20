@@ -17,7 +17,7 @@ from pptx.opc.constants import RELATIONSHIP_TYPE as RT
 from pptx.parts.presentation import _SlideMasters
 from pptx.parts.slidemaster import SlideMaster
 
-from .helpers import saved_pptx_path, test_pptx
+from helpers import saved_pptx_path, test_pptx
 
 
 # given ===================================================
