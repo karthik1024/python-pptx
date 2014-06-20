@@ -6,7 +6,6 @@ Gherkin step implementations for picture-related features.
 
 from __future__ import absolute_import
 
-from StringIO import StringIO
 
 from behave import given, when, then
 from hamcrest import assert_that, has_item
@@ -14,6 +13,7 @@ from hamcrest import assert_that, has_item
 from pptx import Presentation
 from pptx.package import Package
 from pptx.util import Inches
+from pptx.compat import BytesIO
 
 from helpers import saved_pptx_path, test_image_path, test_pptx
 
@@ -33,7 +33,7 @@ def step_when_add_picture_stream(context):
     shapes = context.sld.shapes
     x, y = (Inches(1.25), Inches(1.25))
     with open(test_image_path) as f:
-        stream = StringIO(f.read())
+        stream = BytesIO(f.read())
     shapes.add_picture(stream, x, y)
 
 

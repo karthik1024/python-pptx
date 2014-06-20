@@ -10,7 +10,7 @@ import os
 
 from behave import given, when, then
 from hamcrest import assert_that, is_, is_not, greater_than
-from StringIO import StringIO
+from pptx.compat import BytesIO
 
 from pptx import Presentation
 from pptx.opc.constants import RELATIONSHIP_TYPE as RT
@@ -81,7 +81,7 @@ def when_open_basic_pptx(context):
 @when('I open a presentation contained in a stream')
 def when_open_presentation_stream(context):
     with open(test_pptx('test')) as f:
-        stream = StringIO(f.read())
+        stream = BytesIO(f.read())
     context.prs = Presentation(stream)
     stream.close()
 
@@ -112,7 +112,7 @@ def when_save_presentation(context):
 
 @when('I save the presentation to a stream')
 def when_save_presentation_to_stream(context):
-    context.stream = StringIO()
+    context.stream = BytesIO()
     context.prs.save(context.stream)
 
 
