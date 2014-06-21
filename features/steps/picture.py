@@ -32,7 +32,7 @@ def given_a_picture_of_known_position_and_size(context):
 def step_when_add_picture_stream(context):
     shapes = context.sld.shapes
     x, y = (Inches(1.25), Inches(1.25))
-    with open(test_image_path) as f:
+    with open(test_image_path, 'rb') as f:
         stream = BytesIO(f.read())
     shapes.add_picture(stream, x, y)
 
